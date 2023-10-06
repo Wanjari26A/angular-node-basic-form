@@ -3,8 +3,15 @@ const dbConfig = require('./config/database');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const UserRoute = require('./routes/userRoutes');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors(
+    {
+      origin: "http://localhost:4200"
+    }
+  ));
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
