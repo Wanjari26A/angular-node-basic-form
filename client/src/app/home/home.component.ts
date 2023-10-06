@@ -63,6 +63,7 @@ export class HomeComponent implements OnInit {
   }
 
   AddEmployee() {
+    console.log('Add employee here')
     this.router.navigate(['AddEmployee']);
   }
 

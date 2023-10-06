@@ -10,6 +10,7 @@ exports.create = async (req, res) => {
         email: req.body.email,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
+        address: req.body.address,
         phone: req.body.phone
     });
     

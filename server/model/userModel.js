@@ -13,6 +13,10 @@ var schema = new mongoose.Schema({
         type: String,
         default: ''
     },
+    address: {
+        type: String,
+        default: ''
+    },
     phone: String,
 });
 var user = new mongoose.model('User', schema);
