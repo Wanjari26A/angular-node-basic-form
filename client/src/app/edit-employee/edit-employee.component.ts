@@ -30,12 +30,12 @@ export class EditEmployeeComponent implements OnInit {
       if (data != null && data.body != null) {
         var resultData = data.body;
         if (resultData) {
-          this.editEmployeeForm.Id = resultData.id;
-          this.editEmployeeForm.FirstName = resultData.firstName;
-          this.editEmployeeForm.LastName = resultData.lastName;
-          this.editEmployeeForm.Email = resultData.email;
-          this.editEmployeeForm.Address = resultData.address;
-          this.editEmployeeForm.Phone = resultData.phone;
+          this.editEmployeeForm._id = resultData._id;
+          this.editEmployeeForm.firstName = resultData.firstName;
+          this.editEmployeeForm.lastName = resultData.lastName;
+          this.editEmployeeForm.email = resultData.email;
+          this.editEmployeeForm.address = resultData.address;
+          this.editEmployeeForm.phone = resultData.phone;
         }
       }
     },
@@ -45,7 +45,7 @@ export class EditEmployeeComponent implements OnInit {
   EditEmployee(isValid: any) {
     this.isSubmitted = true;
     if (isValid) {
-      this.httpProvider.saveEmployee(this.editEmployeeForm).subscribe(async data => {
+      this.httpProvider.updateEmployeeById(this.editEmployeeForm).subscribe(async data => {
         if (data != null && data.body != null) {
           var resultData = data.body;
           if (resultData != null && resultData.isSuccess) {
@@ -69,10 +69,10 @@ export class EditEmployeeComponent implements OnInit {
 }
 
 export class employeeForm {
-  Id: number = 0;
-  FirstName: string = "";
-  LastName: string = "";
-  Email: string = "";
-  Address: string = "";
-  Phone: string = "";
+  _id: number = 0;
+  firstName: string = "";
+  lastName: string = "";
+  email: string = "";
+  address: string = "";
+  phone: string = "";
 }

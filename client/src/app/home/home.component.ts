@@ -77,8 +77,8 @@ export class HomeComponent implements OnInit {
         (reason) => {});
   }
 
-  deleteEmployee(employee: any) {
-    this.httpProvider.deleteEmployeeById(employee.id).subscribe((data : any) => {
+  deleteEmployee(employeeId: any) {
+    this.httpProvider.deleteEmployeeById(employeeId).subscribe((data : any) => {
       if (data != null && data.body != null) {
         var resultData = data.body;
         if (resultData != null && resultData.isSuccess) {
